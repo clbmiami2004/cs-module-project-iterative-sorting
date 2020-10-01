@@ -25,11 +25,30 @@ print(f"This is my runtime {end - start} seconds")
 print(random_list_of_numbers)
 
 # TO-DO:  implement the Bubble Sort function below
+start1 = time.time()
 def bubble_sort(arr):
-    # Your code here
-
-
+    # We set swapped to true so the loop runs at least once
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(0, len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                # Swap the elements
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                # Set the flag to true so we'll loop again
+                swapped = True
+    
     return arr
+
+# Verify it works:
+random_list_of_numbers1 = [4, 7, 2, 30, 12, 10, 9, 22]
+bubble_sort(random_list_of_numbers1)
+end1 = time.time() - start1
+finalTime = f"{end1: .21f}"
+print(finalTime)
+#print("My processing time for bubble sort is =", end1)
+print(random_list_of_numbers1)
+
 
 '''
 STRETCH: implement the Counting Sort function below
